@@ -10,7 +10,7 @@ class Solution:
         for step in range(3, n + 1):
             # The number of ways to reach step i is the sum of ways to reach step i-1 and step i-2
             # This is because you can reach step i either from step i-1 (taking 1 step) or from step i-2 (taking 2 steps)
-            ways.append(ways[step - 1] + ways[step - 2])
+            ways.append(ways[step-1] + ways[step-2])
         
         # Return the number of ways to reach the n-th step
         return ways[n]
