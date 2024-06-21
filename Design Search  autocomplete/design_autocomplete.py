@@ -6,7 +6,7 @@ class Trie:
         cur = self.root
         for l in sentence:
             if l not in cur:
-               cur[l] = {}
+                cur[l] = {}
             cur = cur[l]
         cur['#'] = sentence
 
