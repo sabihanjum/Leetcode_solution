@@ -1,15 +1,18 @@
 class Solution:
     def spiralOrder(self, mat: List[List[int]]) -> List[int]:
+        # Define ans array to store the result.
         ans = []
 
         n = len(mat)
         m = len(mat[0])
-
+        
+        ## Initialize the pointers reqd for traversal.
         top = 0
         left = 0
         bottom = n - 1
         right = m - 1
-
+        
+        # Loop until all elements are not traversed.
         while top <= bottom and left <= right:
             # for moving left to right
             for i in range(left, right + 1):
