@@ -41,3 +41,5 @@ class Solution:
         tail.next = list1 if list1 else list2
 
         return dummy.next
+
+
