@@ -31,7 +31,7 @@ class LRUCache:
     def get(self, key: int) -> int:
     # Retrieve the value corresponding to a given key.
         if key not in self.keyToNode:
-        return -1
+            return -1
     # If key exists, move the corresponding node to the head (most recently used).
         node = self.keyToNode[key]
         self.remove(node)
@@ -42,10 +42,10 @@ class LRUCache:
     # Insert or update the value associated with a given key.
         if key in self.keyToNode:
         # If key exists, update the value and move the node to the head.
-        node = self.keyToNode[key]
-        node.value = value
-        self.remove(node)
-        self.moveToHead(node)
+            node = self.keyToNode[key]
+            node.value = value
+            self.remove(node)
+            self.moveToHead(node)
         return
     # If the cache is full, remove the least recently used node (tail node).
         if len(self.keyToNode) == self.capacity:
