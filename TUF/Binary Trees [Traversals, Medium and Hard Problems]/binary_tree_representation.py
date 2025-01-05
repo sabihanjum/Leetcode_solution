@@ -56,3 +56,52 @@ class Solution:
 
         # Return the root of the updated tree
         return root
+class Node:
+    # Constructor to create a new node with given data
+    def __init__(self, data):
+        self.data = data
+        self.left = None  # Left child
+        self.right = None  # Right child
+
+class Solution:
+    def createTree(self, nodes):
+        """
+        Creates a binary tree from a given list of values `nodes`.
+        
+        Args:
+        nodes: A list of values to add to the binary tree.
+
+        Returns:
+        The root of the updated binary tree.
+        """
+
+        # If the list is empty, return None
+        if not nodes:
+            return None
+
+        # Create the root node
+        root = Node(nodes[0])
+
+        # Initialize a queue to perform level-order tree construction
+        queue = [root]
+
+        # Traverse the list of values and build the tree
+        i = 1
+        while i < len(nodes):
+            # Get the current node at the front of the queue
+            curr = queue.pop(0)
+
+            # Assign the value to the left child if it doesn't exist
+            if i < len(nodes):
+                curr.left = Node(nodes[i])
+                queue.append(curr.left)
+                i += 1
+
+            # Assign the value to the right child if it doesn't exist
+            if i < len(nodes):
+                curr.right = Node(nodes[i])
+                queue.append(curr.right)
+                i += 1
+
+        # Return the root of the updated tree
+        return root
