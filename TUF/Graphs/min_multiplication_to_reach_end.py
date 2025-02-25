@@ -5,7 +5,6 @@ Your task is to find the minimum steps in which end can be achieved starting fro
 from typing import List
 import math
 from collections import deque
- 
 class Solution:
     
     def minimumMultiplications(self, arr : List[int], start : int, end : int) -> int:
